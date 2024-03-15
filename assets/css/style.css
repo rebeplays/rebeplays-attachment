@@ -1,6 +1,6 @@
 @font-face{
   font-family: Venite;
-  src: url(/Venite.ttf);
+  src: url(Venite.ttf)format('opentype');
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
