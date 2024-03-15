@@ -1,7 +1,8 @@
-@font-face{
+/* @font-face{
   font-family: Venite;
   src: url(Venite.ttf)format('opentype');
-}
+} */
+@import url('https://fonts.cdnfonts.com/css/venite-adoremus');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
@@ -46,7 +47,7 @@ body {
 }
 
 .hero-section .content h2 {
-  font-family: 'Venite';
+  font-family: 'Venite' , sans-serif;
   font-size: 5rem;
   max-width: 600px;
   line-height: 70px;
