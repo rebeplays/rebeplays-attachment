@@ -1,8 +1,4 @@
-/* @font-face{
-  font-family: Venite;
-  src: url(Venite.ttf)format('opentype');
-} */
-@import url('https://fonts.cdnfonts.com/css/venite-adoremus');
+@import url('https://fonts.cdnfonts.com/css/lovecraftimus');
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 
@@ -47,7 +43,7 @@ body {
 }
 
 .hero-section .content h2 {
-  font-family: 'Venite Adoremus' , sans-serif;
+  font-family: 'Lovecraftimus', sans-serif;
   font-size: 5rem;
   max-width: 600px;
   line-height: 70px;
@@ -93,7 +89,8 @@ body {
     padding-bottom: 25px;
     text-transform: uppercase;
     font-weight: 500;
-    font-family: Venite;
+    font-family: 'Lovecraftimus', sans-serif;
+                                                
 }
 .text-bg span {
     font-size: 17px;
@@ -309,7 +306,7 @@ section {
 }
 
 .section-title h2 {
-  font-family:Venite;
+  font-family: 'Lovecraftimus', sans-serif;
   font-size: 32px;
   font-weight: bold;
   text-transform: uppercase;
@@ -475,7 +472,7 @@ section {
   font-size: 36px;
   font-weight: 700;
   position: relative;
-  font-family: Venite;
+  font-family: 'Lovecraftimus', sans-serif;
   padding: 0;
   margin: 0 0 15px 0;
 }
