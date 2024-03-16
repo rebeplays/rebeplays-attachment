@@ -26,7 +26,7 @@ body {
 }
 .hero-section {
   height: 100vh;
-  background-image: url("/assets/img/portfolio/Vivian.png");
+  background-image: url("/Vivian.png");
   background-position: center;
   background-size: cover;
   display: flex;
