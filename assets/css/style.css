@@ -380,6 +380,7 @@ section {
   padding-bottom: 20px;
   position: relative;
   color: #fff;
+  letter-spacing: 3px;;
 }
 
 .section-title h2::before {
@@ -410,6 +411,9 @@ section {
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.portfolio h2{
+  letter-spacing: 5px;
+}
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
