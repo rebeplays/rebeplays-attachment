@@ -73,6 +73,131 @@
   color: #000;
   text-decoration: none;
 }
+.preloader-container {
+    position: fixed;
+    top: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #800000;
+    z-index: 1000;
+  }
+  .preloader-container.active_new {
+  -webkit-transform: translateY(-100vh);
+          transform: translateY(-100vh);
+  -webkit-transition: ease-in-out 2s;
+  transition: ease-in-out 2s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+  .preloader-text {
+
+    font-family: 'Lovecraftimus', sans-serif;
+    font-size: 90px;
+    /* opacity: 0; */
+    /* animation: fadeInLetter 1s forwards,  scaleIn 1s forwards; */
+    top: 50%;
+    height: 500px;
+    position: absolute;
+    width: 100%;
+    /* left: 50%; */
+    margin: auto;
+    text-align: center;
+  }
+
+  /* Animation for individual letters */
+  .preloader-text span {
+    opacity: 0;
+    animation: topToBottom 10s forwards;
+    transform-origin: center; /* Set the transform origin to the center of each letter */
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInLetter {
+    0% {
+      opacity: 0;
+      transform: scale(0.8); /* Start with a slightly smaller scale */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* End with the original scale */
+    }
+  }
+
+  @keyframes topToBottom {
+    0% {
+    transform: translateY(-100%); /* Start position above the viewport */
+  }
+  100% {
+    transform: translateY(0); /* End position at the center of the viewport */
+  }
+  }
+
+  /* Add scale-in animation */
+  @keyframes scaleIn {
+    0% {
+      transform: scale(0.8); /* Start with a slightly smaller scale */
+    }
+    100% {
+      transform: scale(1); /* End with the original scale */
+    }
+  }
+
+  /* Add fade-out animation */
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  /* Add expandWidth animation */
+  @keyframes expandWidth {
+    0% {
+      width: auto; /* Start with auto width */
+    }
+    100% {
+      width: 100%; /* End with full width */
+      
+      letter-spacing: 20px;
+    }
+  }
+ .wrap { 
+  background:#fff;
+  background-position: left top; 
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover; 
+  -moz-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover; 
+  width: 100%; 
+  height: 100%; 
+  position: relative;  
+  z-index : 1; 
+   text-align:center;
+}
+h1{
+  font-size:4em;
+  color:#000;
+}
 
 
  
@@ -82,6 +207,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Rebe Plays</title>
+
+  <div class="preloader-container">
+    <div class="preloader-text">
+      <span>L</span><span>o</span><span>a</span><span>d</span><span>i</span><span>n</span><span>g</span><span>...</span>
+    </div>
+  </div>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -1122,8 +1253,8 @@
       <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="rebeee_plays" data-description="Support me on Buy me a coffee!" data-message="" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
   </footer><!-- End Footer -->
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <!-- <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a> -->
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
@@ -1138,6 +1269,27 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    window.onload = function() {
+    setTimeout(function() {
+      var loader = document.querySelector('.preloader-container');
+      loader.classList.add("active_new");
+    //  $('.preloader').addClass('active');
+      // Display your page content after preloader animation completes
+     // document.body.style.overflow = 'auto'; // Restore scrolling
+    }, 4000); // Adjust the duration as needed
+
+    // Apply animations to each span element with a delay
+    const spans = document.querySelectorAll('.preloader-text span');
+    spans.forEach((span, index) => {
+      setTimeout(() => {
+        span.style.opacity = '1';
+        span.style.animation = ' expandWidth 10s forwards, fadeOut 5s forwards'; // Add fade-out animation
+      }, index * 200); // Adjust the delay between each letter's animation
+    });
+  };
+  </script>
 
 </body>
 
