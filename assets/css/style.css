@@ -558,7 +558,7 @@ section {
   margin: 0 0 40px 0;
 }
 
-#footer .social-links a {
+.social-links a {
   font-size: 18px;
   display: inline-block;
   background: #800000; 
@@ -573,9 +573,9 @@ section {
   transition: 0.3s;
 }
 
-#footer .social-links a:hover {
-  background: #0678e3;
-  color: #000;
+.social-links a:hover {
+  background: #fff;
+  color: #800000;
   text-decoration: none;
 }
 
